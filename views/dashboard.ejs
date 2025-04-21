@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<%- include('layouts/head.ejs'); %>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <%- include('layouts/header.ejs'); %>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <%- include('layouts/sidebar.ejs'); %>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 col-12 align-self-center">
+                    <h3 class="text-themecolor mb-0">Tổng quan vốn - dự án</h3>
+                    <ol class="breadcrumb mb-0 p-0 bg-transparent">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Tổng quan vốn - dự án</a></li>
+                        <!-- <li class="breadcrumb-item active">Tổng quan vốn - dự án</li> -->
+                    </ol>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex flex-wrap">
+                                            <div>
+                                                <h3 class="card-title">Tương quan vốn - dự án các năm</h3>
+                                                <h6 class="card-subtitle">Đơn vị (tỉ đồng)</h6>
+                                            </div>
+                                            <div class="ml-auto">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item px-2">
+                                                        <h6 class="text-success"><i
+                                                                class="fa fa-circle font-10 mr-2 "></i>Vốn</h6>
+                                                    </li>
+                                                    <li class="list-inline-item px-2">
+                                                        <h6 class="text-info"><i
+                                                                class="fa fa-circle font-10 mr-2"></i>Dự án</h6>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="amp-pxl" style="height: 360px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">Phân bố vốn các nhóm ngành trong năm</h3>
+                                <!-- <h6 class="card-subtitle">Different Devices Used to Visit</h6> -->
+                                <div id="visitor" style="height:290px; width:100%;"></div>
+                            </div>
+                            <div class="card-body text-center border-top">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item px-2">
+                                        <h6 class="text-info"><i class="fa fa-circle font-10 mr-2 "></i>Giao thông</h6>
+                                    </li>
+                                    <li class="list-inline-item px-2">
+                                        <h6 class=" text-primary"><i class="fa fa-circle font-10 mr-2"></i>Xây dựng</h6>
+                                    </li>
+                                    <li class="list-inline-item px-2">
+                                        <h6 class=" text-success"><i class="fa fa-circle font-10 mr-2"></i>Thuỷ sản</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="card card-body">
+                            <h4 class="card-title mb-0">Lịch sử - Thông báo</h4>
+                            <div class="message-box position-relative mt-3">
+                                <div class="message-widget contact-widget position-relative">
+                                    <!-- Message -->
+                                    <a href="#" class="py-3 px-2 border-bottom d-flex align-items-center text-decoration-none">
+                                        <div class="user-img position-relative d-inline-block mr-2"> <span
+                                                class="round text-white d-inline-block text-center rounded-circle bg-primary"><i
+                                                    class="mdi mdi-email"></i></span>
+                                        </div>
+                                        <div class="w-75 d-inline-block v-middle pl-2">
+                                            <h5 class=" mb-0">Thanh toán dự án A giao đoạn 1</h5>
+                                            <span
+                                                class="mail-desc font-12  overflow-hidden text-nowrap d-block">
+                                                Sử dụng nguồn vốn A để thanh toán cho dự án A
+                                            </span>
+                                            <span
+                                                class="time  font-12  overflow-hidden text-nowrap d-block">9:30
+                                                AM</span>
+                                        </div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#" class="py-3 px-2 border-bottom d-flex align-items-center text-decoration-none">
+                                        <div class="user-img position-relative d-inline-block mr-2"> <span
+                                                class="round text-white d-inline-block text-center rounded-circle bg-danger"><i
+                                                    class="mdi mdi-earth"></i></span>
+                                        </div>
+                                        <div class="w-75 d-inline-block v-middle pl-2">
+                                            <h5 class=" mb-0">Điều chỉnh giai đoạn dự án B</h5>
+                                            <!-- <span
+                                                class="mail-desc font-12  overflow-hidden text-nowrap d-block">Todays
+                                                headlines :
+                                                Breakdancing Grandma Proves
+                                                ..</span> -->
+                                            <span
+                                                class="time  font-12  overflow-hidden text-nowrap d-block">9:10
+                                                AM</span>
+                                        </div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#" class="py-3 px-2 border-bottom d-flex align-items-center text-decoration-none">
+                                        <div class="user-img position-relative d-inline-block mr-2"> <span
+                                                class="round text-white d-inline-block text-center rounded-circle bg-success"><i
+                                                    class="mdi mdi-currency-usd"></i></span>
+                                        </div>
+                                        <div class="w-75 d-inline-block v-middle pl-2">
+                                            <h5 class=" mb-0">Điều chỉnh đơn vị thi công dự án C</h5>
+                                            <!-- <span
+                                                class="mail-desc font-12  overflow-hidden text-nowrap d-block">$3500
+                                                from Krishnan, $2000 from Akhil</span> -->
+                                            <span
+                                                class="time  font-12  overflow-hidden text-nowrap d-block">9:08
+                                                AM</span>
+                                        </div>
+                                    </a>
+                                    <!-- Message -->
+                                    <a href="#" class="py-3 px-2 d-flex align-items-center text-decoration-none">
+                                        <div class="user-img position-relative d-inline-block mr-2"> <span
+                                                class="round text-white d-inline-block text-center rounded-circle bg-info"><i
+                                                    class="mdi mdi-comment-check-outline"></i></span>
+                                        </div>
+                                        <div class="w-75 d-inline-block v-middle pl-2">
+                                            <h5 class=" mb-0">Điều chỉnh vốn dự án D</h5>
+                                            <!-- <span
+                                                class="mail-desc font-12  overflow-hidden text-nowrap d-block">Jhonny
+                                                : Hey this stuff is awesome and how can i
+                                                ..</span> -->
+                                            <span
+                                                class="time  font-12  overflow-hidden text-nowrap d-block">9:02
+                                                AM</span>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="py-3 px-2 d-flex align-items-center text-decoration-none">
+                                        <div class="user-img position-relative d-inline-block mr-2"> <span
+                                                class="round text-white d-inline-block text-center rounded-circle bg-info"><i
+                                                    class="mdi mdi-comment-check-outline"></i></span>
+                                        </div>
+                                        <div class="w-75 d-inline-block v-middle pl-2">
+                                            <h5 class=" mb-0">Hoàn thành dự án E</h5>
+                                            <!-- <span
+                                                class="mail-desc font-12  overflow-hidden text-nowrap d-block">Jhonny
+                                                : Hey this stuff is awesome and how can i
+                                                ..</span> -->
+                                            <span
+                                                class="time  font-12  overflow-hidden text-nowrap d-block">9:02
+                                                AM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex no-block">
+                                    <h4 class="card-title">Dự án trong năm</h4>
+                                    <div class="ml-auto">
+                                        <select class="custom-select">
+                                            <option selected="">Tháng 1</option>
+                                            <option value="1">Tháng 2</option>
+                                            <option value="2">Tháng 3</option>
+                                            <option value="3">Tháng 4</option>
+                                            <option value="4">Tháng 4</option>
+                                            <option value="5">Tháng 5</option>
+                                            <option value="6">Tháng 6</option>
+                                            <option value="7">Tháng 7</option>
+                                            <option value="8">Tháng 8</option>
+                                            <option value="9">Tháng 9</option>
+                                            <option value="10">Tháng 10</option>
+                                            <option value="11">Tháng 11</option>
+                                            <option value="12">Tháng 12</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="month-table">
+                                    <div class="table-responsive mt-3">
+                                        <table class="table stylish-table v-middle mb-0 no-wrap">
+                                            <thead>
+                                                <tr>
+                                                    <th class="border-0 text-muted font-weight-normal" colspan="2">Chủ dự án</th>
+                                                    <th class="border-0 text-muted font-weight-normal">Tên dự án</th>
+                                                    <th class="border-0 text-muted font-weight-normal">Tình trạng</th>
+                                                    <th class="border-0 text-muted font-weight-normal">Tổng vốn dự án</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width:50px;"><span
+                                                            class="round text-white d-inline-block text-center rounded-circle bg-info">A</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">Nguyễn Văn A</h6>
+                                                        <!-- <small class="text-muted">Web Designer</small> -->
+                                                    </td>
+                                                    <td>Nâng cấp cơ sở hạ tầng trường học</td>
+                                                    <td><span class="badge badge-success px-2 py-1">Low</span></td>
+                                                    <td>3.9 tỉ</td>
+                                                </tr>
+                                                <tr class="active">
+                                                    <td><span class="round text-white d-inline-block text-center rounded-circle bg-info"><img
+                                                                src="../assets/images/users/2.jpg" alt="user" class="rounded-circle"
+                                                                width="50"></span></td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">Cường</h6>
+                                                        <!-- <small class="text-muted">Project Manager</small> -->
+                                                    </td>
+                                                    <td>Chuyển đổi số giáo dục</td>
+                                                    <td><span class="badge badge-info px-2 py-1">Medium</span></td>
+                                                    <td>5 tỉ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span
+                                                            class="round text-white d-inline-block text-center rounded-circle bg-success">B</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">Hùng</h6>
+                                                        <!-- <small class="text-muted">Developer</small> -->
+                                                    </td>
+                                                    <td>Phát triển phần mềm hệ thống giám sát giao thông</td>
+                                                    <td><span class="badge badge-primary px-2 py-1">High</span></td>
+                                                    <td>12.9 tỉ</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span
+                                                            class="round text-white d-inline-block text-center rounded-circle bg-primary">N</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">An</h6>
+                                                        <!-- <small class="text-muted">Frontend
+                                                            Eng</small> -->
+                                                    </td>
+                                                    <td>Xây dựng nông thôn mới</td>
+                                                    <td><span class="badge badge-danger px-2 py-1">Low</span></td>
+                                                    <td>10.9 tỉ</td>
+                                                </tr>
+                                                <!-- <tr>
+                                                    <td><span
+                                                            class="round text-white d-inline-block text-center rounded-circle bg-warning">M</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">Micheal Doe</h6><small class="text-muted">Content
+                                                            Writer</small>
+                                                    </td>
+                                                    <td>Helping Hands</td>
+                                                    <td><span class="badge badge-warning px-2 py-1">High</span></td>
+                                                    <td>$12.9K</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span
+                                                            class="round text-white d-inline-block text-center rounded-circle bg-danger">N</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="font-weight-medium mb-0">Johnathan</h6><small class="text-muted">Graphic</small>
+                                                    </td>
+                                                    <td>Digital Agency</td>
+                                                    <td><span class="badge badge-info px-2 py-1">High</span></td>
+                                                    <td>$2.6K</td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Row -->
+                
+                <!-- Row -->
+                
+                <!-- Row -->
+                
+                <!-- Row -->
+                
+                <!-- Row -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer">
+                © 2020 NT - CĐS
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+    
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script data-cfasync="false" src="../../../../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="dist/js/app.min.js"></script>
+    <script src="dist/js/app.init.js"></script>
+    <script src="dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- chartist chart -->
+    <script src="assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="assets/extra-libs/echarts/echarts-all.js"></script>
+    <script src="assets/extra-libs/flot/excanvas.js"></script>
+    <script src="assets/extra-libs/flot/jquery.flot.js"></script>
+    <script src="assets/extra-libs/flot/jquery.flot.time.js"></script>
+    <script src="assets/extra-libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+
+    <!--c3 JavaScript -->
+    <script src="../assets/libs/d3/dist/d3.min.js"></script>
+    <script src="../assets/libs/c3/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="dist/js/pages/dashboards/dashboard5.js"></script>
+    <script src="dist/js/pages/dashboards/dashboard1.js"></script>
+</body>
+</html>

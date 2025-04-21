@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="keywords" content="<%=language['web_head_keywords']%>" />
+
+    <meta property="og:title" content="<%=language['web_title_meta']%>" />
+    <meta property="title" content="<%=language['web_title_meta']%>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="<%=language['web_image_logo']%>" />
+    <meta property="image" content="<%=language['web_image_logo']%>" />
+    <meta
+      property="og:description"
+      content="<%=language['web_head_description']%>"
+    />
+    <meta
+      property="description"
+      content="<%=language['web_head_description']%>"
+    />
+
+    <meta
+      name="apple-itunes-app"
+      content="app-id=6504037312, app-argument=https://apps.apple.com/<%=language['web_link_app_store']%>"
+    />
+    <meta name="google-play-app" content="app-id=com.mywo" />
+
+    <!--====== Title ======-->
+    <title><%=language['web_head_og_title']%></title>
+
+    <!--====== Favicon Icon ======-->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo/app-icon.png"
+      type="image/png"
+    />
+
+    <meta name="author" content="" />
+
+    <link
+      rel="canonical"
+      href="https://www.wrappixel.com/templates/xtremeadmin/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .navbar {
+        background-color: #5089fd1a;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+      }
+
+      .navbar-dark {
+        background-color: #def0ea !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 40;
+      }
+
+      .button {
+        border-radius: 4px;
+        background: linear-gradient(to right, #5089fd 50%, #000 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all 0.5s ease-out;
+      }
+
+      .button:hover {
+        background-position: left bottom;
+      }
+
+      .text {
+        text-align: center;
+        font-size: 16px;
+        line-height: 30px;
+        color: black;
+        transition: all 0.6s ease-out;
+        display: block;
+      }
+
+      .text:hover {
+        color: white;
+      }
+      .bottom-to-top {
+        position: fixed;
+        bottom: 1%;
+        right: 2%;
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #5089fd;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/dist/tailwind.css" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/tailwind.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="scroll-smooth w-screen overflow-x-hidden">
+    <div
+      id="side-menu"
+      class="fixed top-0 left-[-250px] w-[200px] h-screen bg-gray-700 z-50 p-3 flex flex-col space-y-5 text-white transition-left ease-in-out duration-300 hidden-menu sidebar-menu shadow-xl"
+    >
+      <a
+        href="javascript:void(0)"
+        class="text-right text-4xl hover:text-red"
+        onclick="closeMenu()"
+        >&times;</a
+      >
+      <a class="hover:text-[#5089FD]" href="#" id="logo">
+        <%=language['web_menu_1']%>
+      </a>
+      <a class="hover:text-[#5089FD]" href="#<%=language['link_features']%>">
+        <%=language['web_menu_2']%>
+      </a>
+      <a class="hover:text-[#5089FD]" href="#<%=language['link_download']%>">
+        <%=language['web_menu_3']%>
+      </a>
+      <a class="hover:text-[#5089FD]" href="#<%=language['link_contact']%>">
+        <%=language['web_menu_4']%>
+      </a>
+      <!-- <a class="hover:text-[#5089FD]" href=""> <%=language['web_menu_5']%> </a> -->
+      <!-- <a class="hover:text-[#5089FD]" href=""> <%=language['web_menu_6']%> </a> -->
+      <div class="flex w-[120px] h-[30px] ml-30 items-center">
+        <div
+          class="w-full flex bg-[#5089FD] text-white p-1 rounded-l-full cursor-pointer"
+        >
+          <img
+            class="w-4 h-4 m-auto mx-1 rounded-full"
+            src="assets/images/<%=language['web_lang_1_img']%>"
+            alt=""
+          />
+          <span style="color: #fff" class="font-semibold">
+            <%=language['web_lang_1']%>
+          </span>
+        </div>
+
+        <div
+          class="w-full flex bg-[#C5C5C54D] p-1 rounded-r-full cursor-pointer"
+          onclick="changeLanguage('<%=lang%>')"
+        >
+          <img
+            class="w-4 h-4 m-auto mx-1 rounded-full"
+            src="assets/images/<%=language['web_lang_2_img__']%>"
+            alt=""
+          />
+          <span class="font-semibold text-[#B5BBC6] mr-1">
+            <%=language['web_lang_2']%>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-wrapper">
+      <!-- ============================================================== -->
+      <!-- Preloader - style you can find in spinners.css -->
+      <!-- ============================================================== -->
+      <div class="">
+        <div class="lds-ripple">
+          <div class="lds-pos"></div>
+          <div class="lds-pos"></div>
+        </div>
+      </div>
+
+      <div class="shape-1 z-50">
+        <img src="assets/images/shape/shape-3.png" alt="" />
+      </div>
+
+      <div class="shape-2 z-50">
+        <img src="assets/images/shape/shape-2.png" alt="" />
+      </div>
+
+      <div class="shape-3 z-50">
+        <img src="assets/images/shape/shape-15.png" alt="" />
+      </div>
+
+      <!-- <div class="shape-4">
+        <img src="assets/images/shape/shape-10.png" alt="">
+      </div> -->
+      <!-- ============================================================== -->
+      <!-- Preloader - style you can find in spinners.css -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Login box.scss -->
+      <!-- ============================================================== -->
+      <div class="relative mx-auto flex justify-center">
+        <div>
+          <div
+            class="bg-gradient-to-r from-[#FFFFFF] from-10% via-[#D2ECFF] via-30% to-[#FFFFFF] to-90% h-[82px] max-w-[100vw] flex justify-center flex-1 navbar shadow-sm duration-300 ease-linear"
+          >
+            <div
+              class="h-[82px] w-full max-w-[1600px] flex items-center justify-between md:bg-transparent mx-4"
+            >
+              <div class="w-[120px] min-w-[120px]">
+                <a href="#" id="logo">
+                  <img src="assets/images/logo_app.svg" alt="" />
+                </a>
+              </div>
+              <div class="w-3/5 lg:w-[45%] xl:w-[40%] hidden md:block">
+                <ul
+                  class="flex flex-row w-full justify-between items-center h-full"
+                >
+                  <li class="">
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] font-Inter"
+                      href="#"
+                      id="logo"
+                    >
+                      <%=language['web_menu_1']%>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] break-words"
+                      href="#<%=language['link_features']%>"
+                    >
+                      <%=language['web_menu_2']%>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] break-words"
+                      href="#<%=language['link_download']%>"
+                    >
+                      <%=language['web_menu_3']%>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] break-words"
+                      href="#<%=language['link_contact']%>"
+                    >
+                      <%=language['web_menu_4']%>
+                    </a>
+                  </li>
+                  <!-- <li>
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] break-words"
+                      href=""
+                    >
+                      <%=language['web_menu_5']%>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-[16px] font-bold text-[#0A102F] break-words"
+                      href=""
+                    >
+                      <%=language['web_menu_6']%>
+                    </a>
+                  </li> -->
+                  <li class="flex w-[120px] h-[30px] ml-30 items-center">
+                    <div
+                      class="w-full flex bg-gradient-to-r from-[#5089FD] from-10% to-[#246BFD] to-90% p-1 rounded-l-full cursor-pointer"
+                    >
+                      <img
+                        class="w-4 h-4 m-auto mx-1 rounded-full"
+                        src="assets/images/<%=language['web_lang_1_img']%>"
+                        alt=""
+                      />
+                      <span class="font-semibold text-[#f8f8f8]">
+                        <%=language['web_lang_1']%>
+                      </span>
+                    </div>
+                    <div
+                      class="w-full flex bg-[#C5C5C54D] p-1 rounded-r-full cursor-pointer"
+                      onclick="changeLanguage('<%=lang%>')"
+                    >
+                      <img
+                        class="w-4 h-4 m-auto mx-1 rounded-full"
+                        src="assets/images/<%=language['web_lang_2_img__']%>"
+                        alt=""
+                      />
+                      <span class="font-semibold text-[#B5BBC6] mr-1">
+                        <%=language['web_lang_2']%>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div
+                id="open-menu"
+                class="block md:hidden cursor-pointer icon-menu"
+                onclick="openMenu()"
+              >
+                <img
+                  class="float-right h-12 w-12"
+                  src="assets/images/mobile_menu.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute left-0 right-0 top-[82px]">
+          <div
+            class="hidden lg:block"
+            style="
+              width: 447px;
+              height: 447px;
+              transform: rotate(-30deg);
+              transform-origin: 0 0;
+              opacity: 0.28;
+              background: #1da353;
+              box-shadow: 447px 447px 447px;
+              border-radius: 9999px;
+              filter: blur(447px);
+              position: absolute;
+            "
+          ></div>
+          <div
+            class="mx-auto items-center justify-center md:flex w-screen object-fill bg-gradient-to-r from-[#FFFFFF] from-10% via-[#D2ECFF] via-30% to-[#FFFFFF] to-90% md:py-10 py-5 h-full"
+          >
+            <div class="max-w-[1600px] flex">
+              <div
+                class="2xl:w-3/5 2xl:mx-0 text-[#0A102F] md:w-2/3 w-full h-full px-4 xl:pr-10 mx-auto"
+                data-aos="fade-left"
+              >
+                <h1
+                  class="md:text-[40px] text-left text-[28px] font-bold xl:leading-[96.82px] break-words"
+                >
+                  <%=language['web_title']%>
+                </h1>
+                <p
+                  class="text-[16px] my-10 opacity-80 break-words leading-[30px]"
+                >
+                  <%=language['web_home_paragraph_1']%>
+                </p>
+
+                <span
+                  class="text-[16px] my-10 opacity-80 break-words leading-[30px]"
+                >
+                  <%=language['web_home_paragraph_2']%>
+                </span>
+                <div class="mt-10">
+                  <h5
+                    class="text-sm text-[#5089FD] font-bold md:mb-5 mb-0 leading-[22px]"
+                  >
+                    <%=language['web_home_download']%>
+                  </h5>
+                  <div
+                    class="flex flex-col sm:flex-row justify-left lg:mb-5"
+                    data-aos="slide-up"
+                  >
+                    <div
+                      class="button w-[187px] h-[65px] flex items-center justify-center cursor-pointer m-2"
+                    >
+                      <a
+                        href="https://apps.apple.com/<%=language['web_link_app_store']%>"
+                        target="_blank"
+                        class="flex"
+                      >
+                        <div class="mr-3 text-white">
+                          <svg viewBox="0 0 384 512" width="30">
+                            <path
+                              fill="currentColor"
+                              d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <div class="text-[#f8f8f8]">
+                          <div class="text-xs">
+                            <%=language['download_buttons']%>
+                          </div>
+                          <div class="-mt-1 font-sans text-xl font-semibold">
+                            App Store
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="button w-[187px] h-[65px] flex items-center justify-center cursor-pointer m-2"
+                    >
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.mywo"
+                        target="_blank"
+                        class="flex"
+                      >
+                        <div class="mr-3 text-white">
+                          <svg viewBox="30 336.7 120.9 129.2" width="30">
+                            <path
+                              fill="#FFD400"
+                              d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"
+                            />
+                            <path
+                              fill="#FF3333"
+                              d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"
+                            />
+                            <path
+                              fill="#48FF48"
+                              d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"
+                            />
+                            <path
+                              fill="#3BCCFF"
+                              d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"
+                            />
+                          </svg>
+                        </div>
+                        <div class="text-white">
+                          <div class="text-xs">
+                            <%=language['download_buttons']%>
+                          </div>
+                          <div class="text-xl font-semibold font-sans -mt-1">
+                            Google Play
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-2/5 relative hidden lg:block" data-aos="fade-right">
+                <img
+                  class="w-full"
+                  src="assets/images/<%=language['web_phone_img']%>"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            id="<%=language['link_features']%>"
+            class="pt-[50px] sm:pt-[90px] mx-2"
+          >
+            <h1
+              class="text-center text-[28px] sm:text-[40px] leading-[60px] font-bold mb-[50px]"
+              data-aos="fade-up"
+            >
+              <%=language['web_home_features']%>
+            </h1>
+            <div
+              class="max-w-[1348px] mx-2 sm:mx-auto flex flex-col xl:flex-row items-center justify-between mb-[60px]"
+              data-aos="fade-up"
+            >
+              <div
+                class="mx-2 w-[94%] md:mx-0 md:w-2/3 xl:max-w-[426px] mb-10 xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#5089FD] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="min-w-[63px] h-[63px] bg-[#5089FD] rounded-full flex justify-center items-center"
+                  >
+                    <img class="" src="assets/images/check.svg" alt="" />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box1_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box1_content_1']%>
+                </p>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box1_content_2']%>
+                </p>
+              </div>
+              <div
+                class="md:mx-0 w-[94%] md:w-2/3 xl:max-w-[426px] mb-10 xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#FAC62F] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="min-w-[63px] h-[63px] bg-[#FAC62F] rounded-full flex justify-center items-center"
+                  >
+                    <img class="" src="assets/images/calculator.svg" alt="" />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box2_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box2_content_1']%>
+                </p>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box2_content_2']%>
+                </p>
+              </div>
+              <div
+                class="md:mx-0 w-[94%] md:w-2/3 xl:max-w-[426px] xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#A862EA] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="min-w-[63px] h-[63px] bg-[#A862EA] rounded-full flex justify-center items-center"
+                  >
+                    <img class="" src="assets/images/sort.svg" alt="" />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box3_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box3_content_1']%>
+                </p>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box3_content_2']%>
+                </p>
+              </div>
+            </div>
+            <div
+              class="max-w-[1348px] mx-2 sm:mx-auto flex flex-col xl:flex-row items-center justify-between mb-[50px] md:mb-[100px]"
+              data-aos="fade-up"
+            >
+              <div
+                class="md:mx-0 w-[94%] md:w-2/3 xl:max-w-[426px] mb-10 xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#A3D139] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="min-w-[63px] h-[63px] bg-[#A3D139] rounded-full flex justify-center items-center"
+                  >
+                    <img class="" src="assets/images/manage.svg" alt="" />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box4_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box4_content_1']%>
+                </p>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box4_content_2']%>
+                </p>
+              </div>
+              <div
+                class="md:mx-0 w-[94%] md:w-2/3 xl:max-w-[426px] mb-10 xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#FF7B38] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="h-[63px] min-w-[63px] bg-[#FF7B38] rounded-full flex justify-center items-center"
+                  >
+                    <img
+                      class="w-full"
+                      src="assets/images/permissions.svg"
+                      alt=""
+                    />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box5_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box5_content_1']%>
+                </p>
+              </div>
+              <div
+                class="md:mx-0 w-[94%] md:w-2/3 xl:max-w-[426px] xl:mb-0 border border-gray rounded-xl py-4 xl:min-h-[275px] px-4 sm:px-8 xl:h-[275px] h-auto hover:border-t-4 overflow-hidden hover:border-t-[#FF427B] hover:shadow-xl duration-200 ease-linear"
+              >
+                <div class="mb-5 flex items-center w-full">
+                  <div
+                    class="h-[63px] min-w-[63px] bg-[#FF427B] rounded-full flex justify-center items-center"
+                  >
+                    <img class="" src="assets/images/export.svg" alt="" />
+                  </div>
+                  <h5
+                    class="text-[24px] font-bold ml-4 break-normal max-w-[270px]"
+                  >
+                    <%=language['web_home_features_box6_title']%>
+                  </h5>
+                </div>
+                <p class="opacity-80 text-[16px] leading-8">
+                  <%=language['web_home_features_box6_content_1']%>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#F8F8F8] mx-auto lg:py-[100px] overflow-x-hidden">
+            <div
+              class="flex xl:flex-row flex-col mb-[50px] max-w-[1600px] mx-auto"
+            >
+              <div class="xl:w-1/2 w-full" data-aos="fade-right">
+                <img
+                  class="lg:max-w-[738px]"
+                  src="assets/images/<%=language['web_phone1_img']%>"
+                  alt=""
+                />
+              </div>
+              <div
+                class="xl:w-1/2 w-full py-[50px] px-5 sm:py-[50px] sm:pr-[50px] sm:pl-[100px] md:py-[100px] md:pr-[100px] text-[#0A102F]"
+                data-aos="fade-left"
+              >
+                <h2 class="text-[40px] font-bold leading-[60px] mb-[30px]">
+                  <%=language['web_home_intro_box_1_title']%>
+                </h2>
+                <p class="text-[16px] opacity-80 leading-8">
+                  <%=language['web_home_intro_box_1_content_1']%>
+                  <br />
+                  <br />
+                  <%=language['web_home_intro_box_1_content_2']%>
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex xl:flex-row flex-col-reverse mx-auto max-w-[1600px]"
+            >
+              <div
+                class="xl:w-1/2 xl:mr-8 w-full py-[50px] px-5 sm:py-[50px] sm:pl-[50px] md:py-[100px] md:pl-[100px] text-[#0A102F]"
+                data-aos="fade-right"
+              >
+                <h2 class="text-[40px] font-bold leading-[60px] mb-[30px]">
+                  <%=language['web_home_intro_box_2_title']%>
+                </h2>
+                <p class="text-[16px] opacity-80 break-words leading-8">
+                  <%=language['web_home_intro_box_2_content_1']%>
+                  <br />
+                  <br />
+                  <%=language['web_home_intro_box_2_content_2']%>
+                </p>
+              </div>
+              <div
+                class="xl:w-1/2 w-full flex justify-end"
+                data-aos="fade-left"
+              >
+                <div class="md:ml-[100px]">
+                  <img
+                    class="lg:max-w-[707px]"
+                    src="assets/images/<%=language['web_phone2_img']%>"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="<%=language['link_download']%>"
+            class="bg-gradient-to-bl from-white from-[50%] to-[#EAF6FC] lg:pt-[180px] py-0 lg:pb-[80px]"
+          >
+            <div
+              class="max-w-[1296px] h-auto bg-[#FFC900] mx-5 my-[50px] lg:mx-auto rounded-3xl flex flex-col-reverse lg:flex-row relative"
+              data-aos="fade-right"
+            >
+              <div class="w-2/5 flex justify-center" data-aos="slide-up">
+                <img
+                  class="absolute lg:left-[10%] left-1/2 -translate-x-1/2 lg:-translate-x-0 bottom-0 hidden lg:block w-[350px]"
+                  src="assets/images/<%=language['web_phone3_img']%>"
+                  alt=""
+                />
+              </div>
+              <div
+                class="lg:w-3/5 w-full lg:pl-[70px] lg:pt-[100px] lg:pr-[110px] p-5 text-left lg:pb-[90px] text-[#0A102F]"
+              >
+                <h1
+                  class="text-[40px] leading-[60px] font-bold lg:mb-[50px] mb-5"
+                  data-aos="slide-up"
+                >
+                  <%=language['web_home_download_title']%>
+                </h1>
+                <p
+                  class="text-[16px] lg:mb-[80px] mb-[30px] leading-[30px]"
+                  data-aos="slide-up"
+                >
+                  <%=language['web_home_download_content_1']%>
+                  <br />
+                  <%=language['web_home_download_content_2']%>
+                </p>
+
+                <div
+                  class="flex flex-col sm:flex-row justify-left lg:mb-0"
+                  data-aos="slide-up"
+                >
+                  <div
+                    class="button w-[187px] h-[65px] flex items-center justify-center cursor-pointer m-2"
+                  >
+                    <a
+                      href="https://apps.apple.com/<%=language['web_link_app_store']%>"
+                      target="_blank"
+                      class="flex"
+                    >
+                      <div class="mr-3 text-white">
+                        <svg viewBox="0 0 384 512" width="30">
+                          <path
+                            fill="currentColor"
+                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+                          ></path>
+                        </svg>
+                      </div>
+                      <div class="text-[#f8f8f8]">
+                        <div class="text-xs">
+                          <%=language['download_buttons']%>
+                        </div>
+                        <div class="-mt-1 font-sans text-xl font-semibold">
+                          App Store
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div
+                    class="button w-[187px] h-[65px] flex items-center justify-center cursor-pointer m-2"
+                  >
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.mywo"
+                      target="_blank"
+                      class="flex"
+                    >
+                      <div class="mr-3 text-white">
+                        <svg viewBox="30 336.7 120.9 129.2" width="30">
+                          <path
+                            fill="#FFD400"
+                            d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"
+                          />
+                          <path
+                            fill="#FF3333"
+                            d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"
+                          />
+                          <path
+                            fill="#48FF48"
+                            d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"
+                          />
+                          <path
+                            fill="#3BCCFF"
+                            d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"
+                          />
+                        </svg>
+                      </div>
+                      <div class="text-white">
+                        <div class="text-xs">
+                          <%=language['download_buttons']%>
+                        </div>
+                        <div class="text-xl font-semibold font-sans -mt-1">
+                          Google Play
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            id="<%=language['link_contact']%>"
+            class="bg-[#5089FD0D] md:bg-gradient-to-r from-[#D7ECFD] via-[#F8FDFE] to-[#E7EFFE]"
+          >
+            <div
+              class="md:flex flex-col lg:flex-row border-t border-b border-r hidden h-full w-full"
+            >
+              <div class="flex flex-col w-full lg:w-[35%] border-r border-gray">
+                <h1
+                  class="h-3/5 font-normal text-xl lg:leading-[60px] flex justify-center items-center p-2 lg:p-0 border-b border-gray"
+                >
+                  <%=language['web_home_footer_address']%>
+                </h1>
+                <a
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words border-b lg:border-b-0"
+                >
+                  <%=language['footer_address']%></a
+                >
+              </div>
+              <div class="flex flex-col w-full lg:w-[20%] border-r border-gray">
+                <h1
+                  class="h-3/5 font-normal text-xl lg:leading-[60px] flex justify-center items-center p-2 lg:p-0 border-b border-gray"
+                >
+                  <%=language['web_home_footer_contact']%>
+                </h1>
+                <a
+                  href="tel:+84932644247"
+                  target="_blank"
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words hover:text-[#5089FD] hover:underline duration-200 ease-linear border-b lg:border-b-0"
+                  >+(84) 932 644 247</a
+                >
+              </div>
+              <div
+                class="flex flex-col w-full lg:w-[20%] min-w-[260px] border-r border-gray"
+              >
+                <h1
+                  class="h-3/5 font-normal text-xl lg:leading-[60px] flex justify-center items-center p-2 lg:p-0 border-b border-gray"
+                >
+                  <%=language['web_home_footer_email']%>
+                </h1>
+                <a
+                  href="mailto:admin@shapeecloud.com"
+                  target="_blank"
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words hover:text-[#5089FD] hover:underline duration-200 ease-linear border-b lg:border-b-0"
+                  >admin@shapeecloud.com
+                </a>
+              </div>
+              <div class="flex flex-col w-full lg:w-[25%]">
+                <h1
+                  class="h-3/5 font-normal text-xl lg:leading-[60px] flex justify-center items-center p-2 lg:p-0 border-b border-gray"
+                >
+                  <%=language['web_home_footer_support']%>
+                </h1>
+                <a
+                  href="https://zalo.me/g/wrzobq148"
+                  target="_blank"
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words hover:text-[#5089FD] hover:underline duration-200 ease-linear"
+                  >https://zalo.me/g/wrzobq148</a
+                >
+              </div>
+            </div>
+
+            <div class="md:hidden flex-col lg:flex-row lg:h-[279px]">
+              <div
+                class="flex flex-row w-full h-full items-center justify-center my-3 cursor-pointer"
+              >
+                <a href="#" id="logo">
+                  <img class="mt-10" src="assets/images/logo.svg" />
+                </a>
+              </div>
+              <div
+                class="flex flex-row w-full h-full items-center justify-center my-3 border-b"
+              >
+                <img
+                  class="w-4"
+                  src="assets/images/footer_mobile_icon/location.svg"
+                  alt=""
+                />
+                <a
+                  class="h-2/5 flex items-start sm:items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words"
+                >
+                  <%=language['footer_address']%>
+                </a>
+              </div>
+              <div
+                class="flex flex-row w-full min-w-[260px] h-full items-center justify-center my-3 border-b"
+              >
+                <img
+                  class="w-4"
+                  src="assets/images/footer_mobile_icon/call.svg"
+                  alt=""
+                />
+                <a
+                  href="tel:+84932644247"
+                  target="_blank"
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words hover:text-[#5089FD] hover:underline duration-300 ease-linear"
+                  >+(84) 932 644 247
+                </a>
+              </div>
+              <div
+                class="flex flex-row w-full h-full items-center justify-center my-3"
+              >
+                <img
+                  class="w-4"
+                  src="assets/images/footer_mobile_icon/sms.svg"
+                  alt=""
+                />
+                <a
+                  href="mailto:admin@shapeecloud.com"
+                  target="_blank"
+                  class="h-2/5 flex items-center justify-center text-[#161F1C] lg:text-[20px] text-center py-4 break-words hover:text-[#5089FD] hover:underline duration-200 ease-linear"
+                  >admin@shapeecloud.com
+                </a>
+              </div>
+            </div>
+
+            <p
+              class="text-center bg-black text-base text-white md:text-[#161F1C] md:bg-transparent md:text-base lg:pt-5 lg:pb-[30px] leading-[24px] py-[30px]"
+            >
+              Copyright © 2024 EzHostel. All Rights Reserved.
+            </p>
+            <div
+              onclick="bottomToTop()"
+              class="buttons-bottom bottom-to-top flex items-center justify-center cursor-pointer hover:opacity-90 duration-300 shadow-md"
+            >
+              <i class="fa text-white text-base">&#xf062;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- Login box.scss -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper scss in scafholding.scss -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Page wrapper scss in scafholding.scss -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right Sidebar -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right Sidebar -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- All Required js -->
+    <!-- ============================================================== -->
+    <!-- <script src="assets/libs/jquery/dist/jquery.min.js"></script> -->
+    <!-- Bootstrap tether Core JavaScript -->
+    <!-- <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script> -->
+    <!-- <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <!-- ============================================================== -->
+    <!-- This page plugin js -->
+    <!-- ============================================================== -->
+    <!-- <script>
+      $('[data-toggle="tooltip"]').tooltip();
+      $(".preloader").fadeOut();
+    </script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      document.onreadystatechange = function () {
+        let lastScrollPosition = 0;
+        const navbar = document.querySelector(".navbar");
+        window.addEventListener("scroll", function (e) {
+          lastScrollPosition = window.scrollY;
+
+          if (lastScrollPosition > 400) {
+            navbar.classList.add("navbar-dark");
+          } else {
+            navbar.classList.remove("navbar-dark");
+          }
+        });
+        const bottomTop = document.querySelector(".buttons-bottom");
+        window.addEventListener("scroll", function (e) {
+          lastScrollPosition = window.scrollY;
+
+          if (lastScrollPosition > 800) {
+            bottomTop.classList.add("bottom-to-top");
+          } else {
+            bottomTop.classList.remove("bottom-to-top");
+          }
+        });
+      };
+
+      function changeLanguage(lang) {
+        if (lang == "en") {
+          window.location.href = "/";
+          return;
+        } else window.location.href = "?lang=en";
+        return;
+      }
+    </script>
+    <script>
+      document.getElementById("logo").addEventListener("click", function () {
+        // Scroll to the top of the page
+        event.preventDefault();
+        window.scrollTo({
+          behavior: "smooth", // Add smooth scrolling effect if supported
+          top: 0,
+        });
+      });
+
+      function openMenu() {
+        const sideMenu = document.getElementById("side-menu");
+        sideMenu.classList.toggle("hidden-menu");
+        if (sideMenu.classList.contains("hidden-menu")) {
+          sideMenu.style.left = "-250px";
+        } else {
+          sideMenu.style.left = "0";
+        }
+        // sideMenu.classList.remove("left-[-250px]");
+        // sideMenu.classList.add("left-0");
+      }
+
+      function closeMenu() {
+        const sideMenu = document.getElementById("side-menu");
+        sideMenu.classList.remove("left-0");
+        sideMenu.classList.add("left-[-250px]");
+      }
+
+      const sidebarItems = document.querySelectorAll(".sidebar-menu a");
+
+      sidebarItems.forEach((item) => {
+        const sideMenu = document.getElementById("side-menu");
+        item.addEventListener("click", function () {
+          sideMenu.classList.toggle("hidden-menu");
+          if (sideMenu.classList.contains("hidden-menu")) {
+            sideMenu.style.left = "-250px";
+          } else {
+            sideMenu.style.left = "0";
+          }
+        });
+      });
+      function bottomToTop() {
+        window.scrollTo({
+          behavior: "smooth", // Add smooth scrolling effect if supported
+          top: 0,
+        });
+      }
+    </script>
+    <script>
+      // Wait for the DOM to be ready
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fade in the body once the page is loaded
+        document.body.style.opacity = 1;
+      });
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+  </body>
+</html>
